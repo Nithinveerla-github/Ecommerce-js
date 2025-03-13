@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Carousel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <style>
+      
+body{
+    overflow-x: hidden;
+}
+        .swiper-container {
+            width: 100%;
+            max-width: 1300px;
+            padding: 20px 20px;
+        }
+
+        .swiper-slide {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -10%);
+            color: #1f1d1d;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            width: 80%;
+        }
+
+        .slide-title {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .slide-description {
+            font-size: 1rem;
+            margin: 5px 0 0;
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1.1); /* Zoom effect for center image */
+        }
+
+        /* Pagination Styles */
+        .swiper-pagination {
+            position: relative;
+            bottom: 0;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .swiper-pagination-bullet {
+            width: 5px;
+            height: 5px;
+            background-color: #ccc;
+            border-radius: 30%;
+            opacity: 0.7;
+            padding: 0px 4px;
+            transition: opacity 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: rgb(16, 17, 16);
+            opacity: 1;
+        }
+
+        @media (max-width: 350px) {
+            .swiper-container {
+                padding: 10px 0;
+                width: 90%;
+            }
+
+            .swiper-slide {
+                border-radius: 10px;
+            }
+
+            .slide-content {
+                padding: 10px;
+                width: 90%;
+            }
+
+            .slide-title {
+                font-size: 1.2rem;
+            }
+
+            .slide-description {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .swiper-container {
+                padding: 10px 0;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://thumbs.dreamstime.com/b/stunning-scandinavian-modern-living-room-exudes-sense-warmth-comfort-its-soft-beige-velvet-tufted-sofa-351253514.jpg" alt="Image 1">
+                <div class="content">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Fabrish Setup 1</h1>
+                        <p class="slide-description">Warm and comfortable designs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://thumbs.dreamstime.com/b/living-room-interior-design-filled-lot-potted-plants-306271203.jpg" alt="Image 2">
+                <div class="content">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Fabrish Setup 2</h1>
+                        <p class="slide-description">Modern and stylish interiors.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://thumbs.dreamstime.com/b/stunning-scandinavian-modern-living-room-exudes-sense-warmth-comfort-its-soft-beige-velvet-tufted-sofa-351253514.jpg" alt="Image 3">
+                <div class="content">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Fabrish Setup 3</h1>
+                        <p class="slide-description">Cozy and relaxing environment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://thumbs.dreamstime.com/b/teal-sofa-mock-up-canvas-poster-mid-century-living-room-interior-design-image-showcases-stunning-mid-century-living-353103264.jpg" alt="Image 4">
+                <div class="content">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Fabrish Setup 4</h1>
+                        <p class="slide-description">Perfect balance of design and comfort.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://thumbs.dreamstime.com/b/stunning-scandinavian-modern-living-room-exudes-sense-warmth-comfort-its-soft-beige-velvet-tufted-sofa-351253514.jpg" alt="Image 5">
+                <div class="content">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Fabrish Setup 5</h1>
+                        <p class="slide-description">Timeless and elegant design.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://thumbs.dreamstime.com/b/bright-composition-light-blue-sofa-cushions-white-table-white-carpet-30234631.jpg" alt="Image 6">
+                <div class="content">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Fabrish Setup 6</h1>
+                        <p class="slide-description">Minimalist yet impactful decor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                300: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                600: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                900: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+</body>
+</html>

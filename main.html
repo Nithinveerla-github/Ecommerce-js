@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Paradise</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- ----------------------CONTACT-US------------------- -->
+    <!-- header -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- database -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <!-- carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
+    <script defer src="./main.js"></script>
+    <script src="./products.html"></script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="brand">Urban<span>Style</span></a>
+
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="action-group">
+                <div class="action-btn contact">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="action-btn contact">
+                    <i class="far fa-user"></i>
+                </div>
+                <div class="action-btn" onclick="window.location.href='./cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </div>
+                <div class="action-btn"  onclick="window.location.href='./index.html'">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </div>
+                
+                
+            </div>
+
+            <div class="menu-toggle">
+                <div class="menu-bar bar-top"></div>
+                <div class="menu-bar bar-middle"></div>
+                <div class="menu-bar bar-bottom"></div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <!-- Header Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul class="mobile-list">
+            <li><a href="#" class="mobile-link">Home</a></li>
+            <li><a href="#" class="mobile-link">Shop</a></li>
+            <li><a href="#" class="mobile-link">Blog</a></li>
+            <li><a href="#" class="mobile-link">About</a></li>
+            <li><a href="#" class="mobile-link">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Furniture Paradise</h1>
+    <!-- <img src="https://www.hometown.in/cdn/shop/files/HT-logo1.png?v=1719556324&width=240" height="55px" width="180px"> -->
+
+   <!--IMAGE CONTAINER IN IMAGE -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <h2>Discover Beautiful Furniture</h2>
+            <p>Transform your space with elegant, inspiring designs.</p>
+            <button onclick="scrollToProducts()">Explore Now</button>
+        </div>
+    </section>
+    <!---------------------------CELEBRATE YOUR INDIVIDUALITY----------------- -->
+    <div class="content-container">
+        <h2>CELEBRATING <span class="underline">YOUR</span> INDIVIDUALITY</h2>
+
+      <p>
+            We design premium furniture where comfort is our top priority. Through distinctive designs,
+            finest materials, and masterful craftsmanship, we are dedicated to offering a seamless
+            shopping experience that delivers furniture uniquely crafted to reflect your personal style
+            and fulfill your every need.
+        </p>
+    </div>
+    <img src="https://ik.imagekit.io/2xkwa8s1i/consumer-react/banners/static-common-banner.jpg" alt="Ad Image"
+        class="responsive-image">
+        <div class="marquee-container">
+            <div class="marquee">
+                ✨ Upgrade Your Home with Elegant Furniture | 🛋️ Exclusive Deals Available | 🚛 Free Shipping on All Orders | 🏡 Style Your Space Today! ✨
+            </div>
+        </div>
+    <!----------------------------------------- PRODUCT CONTAINER---------------------------------------------->
+
+    <h1 class="title">Explore <span class="underline">Our Furniture</span> Range</h1>
+
+    <div class="product-container">
+
+        <!-- Product 1 -->
+        <div class="product-subcontainer product-subcontainer1">
+            <img src="https://homeworkliving.in/cdn/shop/files/1_517276fb-da70-48cc-b78c-c0e86e377a45.png?v=1718341377&width=600"
+                alt="Stylish Sofa">
+            <div class="overlay">
+                <h3>Stylish Sofa</h3>
+                <p>Comfort & Luxury</p>
+                <button class="category-btn" onclick="selectCategory('Sofas')">sofas</button>
+            </div>
+        </div>
+          <!-- Product 2-->
+        <div class="product-subcontainer product-subcontainer1">
+            <img src="https://m.media-amazon.com/images/I/71UGv6kvy1L._SY450_.jpg" alt="Stylish Sofa">
+            <div class="overlay">
+                <h3>Stylish Sofa</h3>
+                <p>Comfort & Luxury</p>
+                <button class="category-btn" onclick="selectCategory('Beds')">Beds</button>
+            </div>
+        </div>
+          <!-- Product 3 -->
+        <div class="product-subcontainer product-subcontainer1">
+            <img src="https://images.squarespace-cdn.com/content/v1/63dde481bbabc6724d988548/b5d6c05e-69b9-4c2b-9822-758030583760/_dcf70b4a-c251-4440-a251-982905248c49.jfif"
+                alt="Stylish Sofa">
+            <div class="overlay">
+                <h3>Stylish Sofa</h3>
+                <p>Comfort & Luxury</p>
+                <button class="category-btn" onclick="selectCategory('Kitchen')">kitchen</button>
+            </div>
+        </div>
+          <!-- Product 4 -->
+        <div class="product-subcontainer product-subcontainer1">
+            <img src="https://images.livspace-cdn.com/w:3840/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/designs-sg-1633500163-pPxOT/2024-1704354150-jzIcs/ond-1728544865-qCz8v/tv-unit-1730094241-ke7PV/tv-9-1730719606-QCAay.jpg"
+                alt="Stylish Sofa">
+            <div class="overlay">
+                <h3>Stylish Sofa</h3>
+                <p>Comfort & Luxury</p>
+                <button class="category-btn" onclick="selectCategory('TvUnits')">TvUnits</button>
+            </div>
+        </div>
+          <!-- Product 5 -->
+        <div class="product-subcontainer product-subcontainer1">
+            <img src="https://dms.mydukaan.io/original/jpeg/upload_file_service/3a269031-fa7f-4e90-b3b4-a3657ff416a0/luxury-dining-table-metal.webp"
+                alt="Stylish Sofa">
+            <div class="overlay">
+                <h3>Stylish Sofa</h3>
+                <button class="category-btn" onclick="selectCategory('DiningSet')">DiningSet</button>
+            </div>
+        </div>
+        <!-- Product 6 -->
+        <div class="product-subcontainer product-subcontainer2">
+            <img src="https://m.media-amazon.com/images/I/71+j3Mj9NIL._AC_UF894,1000_QL80_.jpg" alt="Modern Chair">
+            <div class="overlay">
+                <h3>Modern Chair</h3>
+                <p>Ergonomic & Sleek</p>
+                <button class="category-btn" onclick="selectCategory('TvUnits')">TvUnits</button>
+            </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-subcontainer product-subcontainer3">
+            <img src="https://www.starrynight.co.in/cdn/shop/products/Shopify40_1200x.jpg?v=1627804887"
+                alt="Minimal Desk">
+            <div class="overlay">
+                <h3>Minimal Desk</h3>
+                <p>Simple & Elegant</p>
+                <button class="category-btn" onclick="selectCategory('Beds')">Beds</button>
+            </div>
+        </div>
+
+        <!-- Product 8-->
+        <div class="product-subcontainer product-subcontainer4">
+            <img src="https://images.durian.in/Durian/durian/product/800x800/202031673069058.jpg?tr=w-1200,q-100,lo-true"
+                alt="Cozy Lounge">
+            <div class="overlay">
+                <h3>Cozy Lounge</h3>
+                <p>Perfect for Relaxing</p>
+                <button class="category-btn" onclick="selectCategory('Beds')">Beds</button>
+            </div>
+        </div>
+          <!-- Product 9 -->
+          <div class="product-subcontainer product-subcontainer1">
+            <img src="https://m.media-amazon.com/images/I/71UGv6kvy1L._SY450_.jpg" alt="Stylish Sofa">
+            <div class="overlay">
+                <h3>Stylish Sofa</h3>
+                <p>Comfort & Luxury</p>
+                <button class="category-btn" onclick="selectCategory('Beds')">Beds</button>
+            </div>
+        </div>
+             <!-- Product 10 -->
+             <div class="product-subcontainer product-subcontainer1">
+                <img src="https://dms.mydukaan.io/original/jpeg/upload_file_service/3a269031-fa7f-4e90-b3b4-a3657ff416a0/luxury-dining-table-metal.webp"
+                    alt="Stylish Sofa">
+                <div class="overlay">
+                    <h3>Stylish Sofa</h3>
+                    <button class="category-btn" onclick="selectCategory('DiningSet')">DiningSet</button>
+                </div>
+            </div>
+    </div>
+    <div class="marquee-container">
+        <div class="marquee">
+            ✨ Upgrade Your Home with Elegant Furniture | 🛋️ Exclusive Deals Available | 🚛 Free Shipping on All Orders | 🏡 Style Your Space Today! ✨
+        </div>
+    </div>
+
+    <!-- ************************************************************ -->
+
+
+    <img src="http://ii1.pepperfry.com/assets/893c8a89-40e8-42e8-bc2d-4d99fcd70182.jpg" alt="Ad Image" class="responsive-image">
+<!---------------------------caurosel effects container------------------ -->
+
+    <!---------------------------------------------image container ---------------------->
+    <div class="image-container">
+        <div class="sub-image-container" id="sub-image-container1" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">
+            <div class="content">
+                <h2>Living Room Furniture</h2>
+                <p class="important-content">Create a cozy and stylish space with premium quality sofas, coffee tables,
+                    entertainment units, and more.</p>
+                <p class="p">Enhance the heart of your home with elegant and functional furniture. Our collection
+                    includes modern, classic, and luxurious pieces that blend comfort and style.</p>
+                <a href="#" class="explore-btn" onclick="selectCategory('sofa')">Explore</a>
+            </div>
+            <img src="https://img.interiorcompany.com/interior/webproduct/673638722434469849488.png?aio=w-1200;"
+                alt="Living Room Furniture">
+        </div>
+        <div class="sub-image-container" id="sub-image-container2" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">
+
+            <img src="https://img.interiorcompany.com/interior/webproduct/967638664261869745359.png?aio=w-1200;"
+                alt="Master Bedroom Furniture">
+            <div class="content">
+                <h2>Master Bedroom Furniture</h2>
+                <p class="important-content">Experience comfort and relaxation with high-quality beds, wardrobes, and
+                    nightstands.</p>
+                <p class="p">Transform your bedroom into a peaceful retreat with our sophisticated furniture collection.
+                    Choose from a variety of styles to match your personal taste and needs.</p>
+                <a href="#" class="explore-btn" onclick="selectCategory('beds')">Explore</a>
+            </div>
+        </div>
+        <div class="sub-image-container" id="sub-image-container3" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">
+            <div class="content">
+                <h2>Kids' Room Furniture</h2>
+                <p class="important-content">Design a playful and organized space with bunk beds, study tables, and
+                    storage units.</p>
+                <p class="price">Give your kids a fun and comfortable environment with our durable and creative
+                    furniture solutions. Safe, stylish, and practical for growing minds.</p>
+                <a href="#" class="explore-btn" onclick="selectCategory('beds')">Explore</a>
+            </div>
+            <img src="https://img.interiorcompany.com/interior/webproduct/334637886431014146210.jpg?aio=w-1200;"
+                alt="Kids Room Furniture">
+        </div>
+        <div class="sub-image-container" id="sub-image-container4" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">
+
+            <img src="https://img.interiorcompany.com/interior/webproduct/425638590712909348704.png?aio=w-1200;"
+                alt="Kitchen and Dining Furniture">
+            <div class="content">
+                <h2>Kitchen & Dining Furniture</h2>
+                <p class="important-content">Upgrade your kitchen and dining experience with stylish tables, chairs, and
+                    cabinets.</p>
+                <p class="p">From spacious dining sets to compact solutions, our furniture enhances functionality and
+                    aesthetic appeal, making every meal special.</p>
+                <a href="#" class="explore-btn" onclick="selectCategory('Kitchen set')">Explore</a>
+            </div>
+        </div>
+        <div class="sub-image-container" id="sub-image-container5" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">
+            <div class="content">
+                <h2>Outdoor & Patio Furniture</h2>
+                <p class="important-content">Enjoy nature with durable and comfortable garden chairs, tables, and
+                    loungers.</p>
+                <p class="p">Turn your backyard into a serene escape with weather-resistant, stylish, and functional
+                    outdoor furniture built for all seasons.</p>
+                <a href="#" class="explore-btn">Explore</a>
+            </div>
+            <img src="https://img.interiorcompany.com/interior/webproduct/180638573304728844018.png?aio=w-1200;"
+                alt="Outdoor and Patio Furniture">
+        </div>
+    </div>
+    <!-----------------------------------------------------  containers -->
+        <h1 class="title ">We Offer <span class="underline">High-Quality Roofing</span> Services</h1>
+        <!-- <p>Commercial showing on commercial development a user is paying more customers.</p> -->
+
+    <div class="quality-containers">
+        <div class="sub-containerr">
+            <div class="icon"><i class="fas fa-home"></i></div>
+            <h2>Road for Customers</h2>
+            <p>No need to be seen in the facility or prior to the customer’s arrival.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="sub-containerr">
+            <div class="icon"><i class="fas fa-road"></i></div>
+            <h2>Drainage Deposits</h2>
+            <p>Manual with the first time to take on any new or of its own, or later.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="sub-containerr">
+            <div class="icon"><i class="fas fa-tint"></i></div>
+            <h2>Road Receivables</h2>
+            <p>On a business model is not only a reasonable and common stock option.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="sub-containerr">
+            <div class="icon"><i class="fas fa-receipt"></i></div>
+            <h2>Road and Service</h2>
+            <p>Road services for your convenience.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="sub-containerr">
+            <div class="icon"><i class="fas fa-concierge-bell"></i></div>
+            <h2>Service Excellence</h2>
+            <p>We ensure top-notch service for all our customers.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="sub-containerr">
+            <div class="icon"><i class="fas fa-tools"></i></div>
+            <h2>Quality Tools Service</h2>
+            <p>Using the best tools to deliver high-quality results.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </div>
+
+    <div class="view-more">
+        <button>View More >></button>
+    </div>
+
+
+    <!-------------------------------------------------------Rating profiles ----------------------------------------------------->
+    <div class="wrapper">
+        <div class="contact-container">
+            <h2 class="contact-us">Contact Us</h2>
+            <div class="contact-grid">
+                <!-- Left Section: Contact Info -->
+                <div class="contact-info">
+                    <div class="info-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2390/2390589.png" alt="Location">
+                        <div>
+                            <h3>Our Office Address</h3>
+                            <p>Hitech city,Near shivaji maharaj street, Hyderabad-400064,</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="https://e7.pngegg.com/pngimages/904/903/png-clipart-computer-icons-email-message-text-messaging-symbol-email-miscellaneous-angle-thumbnail.png"
+                            alt="Email">
+                        <div>
+                            <h3>General Enquiries</h3>
+                            <p>support@justdial.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="https://thumbs.dreamstime.com/b/phone-flat-icon-call-symbol-phone-call-sign-phone-yellow-icon-call-symbol-isolated-white-vector-phone-yellow-icon-352169517.jpg"
+                            alt="Call">
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+91-8888888888</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="https://png.pngtree.com/png-clipart/20220729/original/pngtree-alarm-clock-yellow-icon-png-image_8423938.png"
+                            alt="Timing">
+                        <div>
+                            <h3>Our Timing</h3>
+                            <p>Mon-Sun: 10AM - 7PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section: Contact Form -->
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Your Contact No." required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <div style="display: grid; place-items: center; width: 100%;">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="real-time-footer">
+        <!-- Footer Top Section -->
+        <div class="footer-top">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are a cutting-edge platform offering the latest in technology, fashion, and lifestyle. Join us for
+                    an unparalleled shopping experience!</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="footer-section">
+                <h3>Customer Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="footer-section">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-Time Updates -->
+        <div class="real-time-updates">
+            <p>Visitors Online: <span id="visitor-count">0</span></p>
+            <p>Current Time: <span id="current-time">00:00:00</span></p>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2023 Real-Time eCommerce. All rights reserved.</p>
+            <div class="payment-methods">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
+                <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal">
+                <img src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png" alt="Apple Pay">
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+   
+    <script>
+        // header
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.querySelector('.menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const header = document.querySelector('.header');
+
+            // Toggle Mobile Menu
+            toggle.addEventListener('click', () => {
+                toggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+            });
+
+            // Close menu on outside click
+            document.addEventListener('click', (e) => {
+                if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                    toggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                }
+            });
+
+            // Close menu on scroll
+            window.addEventListener('scroll', () => {
+                toggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+
+            // Header Scroll Effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.1)';
+                    header.style.backdropFilter = 'blur(12px)';
+                } else {
+                    header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+                    header.style.backdropFilter = 'blur(8px)';
+                }
+            });
+        });
+        // 
+        AOS.init(); function scrollToProducts() {
+            document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showCategory(category) {
+            document.querySelectorAll('.grid-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(category).classList.add('active');
+        }
+
+        function showFullscreen(imageSrc, caption) {
+            const overlay = document.getElementById('fullscreenOverlay');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            const fullscreenCaption = document.getElementById('fullscreenCaption');
+
+            fullscreenImage.src = imageSrc;
+            fullscreenCaption.textContent = caption;
+            overlay.classList.add('active');
+        }
+
+        function closeFullscreen() {
+            const overlay = document.getElementById('fullscreenOverlay');
+            overlay.classList.remove('active');
+        }
+
+        document.querySelectorAll('.item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const caption = item.querySelector('p').textContent;
+                showFullscreen(img.src, caption);
+            });
+        });
+
+        // Show Living Room items by default
+        showCategory('livingRoom');
+        // ***********************************CONTACT-US*****************************
+        // Firebase configuration (Replace with your Firebase project config)
+        // Firebase Configuration (Replace with your own Firebase details)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Form Submission
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let message = document.getElementById("message").value;
+
+            if (name && email && phone && message) {
+                let newMessageRef = database.ref("messages").push();
+                newMessageRef.set({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    message: message
+                });
+
+                alert("Message Sent Successfully!");
+                document.getElementById("contactForm").reset();
+            } else {
+                alert("Please fill all fields!");
+            }
+        });
+        //******************************* */ rendering to another page*******************************
+        function selectCategory(category) {
+            localStorage.setItem("selectedCategory", category);
+            window.location.href = "display.html";
+        }
+        // *********footer************************
+        let visitorCount = Math.floor(Math.random() * 1000) + 1;
+        document.getElementById('visitor-count').textContent = visitorCount;
+
+        // Real-Time Clock
+        function updateTime() {
+            const now = new Date();
+            const time = now.toLocaleTimeString();
+            document.getElementById('current-time').textContent = time;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+// ***********************************CAUROSEL EFFECTS
+
+
+    </script>
+</body>
+
+</html>
